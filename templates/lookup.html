@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>{{title}} Categories</h1>
+
+
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        
+        <div class="form-group">
+            {{ form.count.label(class="form-control-label") }}
+            {{ form.count(class="form-control form-control-lg") }}
+        </div>
+
+        <div>
+            {{ form.submit(class="hvr-grow") }}
+        </div>
+    </form>
+
+
+    <div class="table-wrapper">
+        {{ table }}
+    </div>
+
+    
+    
+{% endblock content %}

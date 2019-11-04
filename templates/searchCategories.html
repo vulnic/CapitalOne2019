@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Search for a Category</h1>
+
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        
+        <fieldset>
+            <div class="form-group">
+                {{ form.category.label(class="form-control-label") }}
+                {{ form.category(class="form-control form-control-lg") }}
+            </div>
+        </fieldset>
+
+        <!-- <p>
+            {{form.value_dropdown()}}
+        </p> -->
+
+        <div>
+            {{ form.submit(class="hvr-grow") }}
+        </div>
+    </form>
+
+    
+{% endblock content %}

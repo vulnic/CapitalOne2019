@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div>
+        <p> Search Functions </p>
+
+        <form> <!-- action="test_api.py"> -->
+            <!-- Dropdowns -->
+            <br>
+
+            <label for="Search Options"> Search Options: </label>
+            <select name= "Search Options" id="Search Options">
+                <option value="q1"> This is the first option </option>
+                <option value="q2"> NEXT OPTION </option>
+                <option value="q3"> Biooifoiwj oiejwoij oijew  </option>
+            </select>
+
+            <br><br>
+
+            <!-- Input Text Boxes -->
+            <label for="apiSearch"> Enter a category: </label>
+            <input type="text" id="apiSearch" name="api_user_search" placeholder="Enter a Category">
+            
+            <br><br>
+
+            <!-- LARGE boxes of text -->
+            <label for="box_of_words">box_of_words:</label>
+            <br>
+            <textarea name="box_of_words" id="box_of_words" cols="30" rows="10" placeholder="GHOOOSTT"></textarea>
+
+            <!-- Submit Button-->
+            <br>
+            <input type="submit" value="submit the forms">
+
+        </form>
+
+        <br><br>
+
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+
+            <div class="form-group">
+                {{ form.category.label(class="form-control-label") }}
+                {{ form.category(class="form-control form-control-lg") }}
+            </div>
+
+
+            <div class="form-group">
+                    {{ form.value.label(class="form-control-label") }}
+                    {{ form.value(class="form-control form-control-lg") }}
+                </div>
+
+                <div>
+                        <input type="submit" value="submit the forms" class = 'hvr-grow'>
+                        <br><br>
+                        <button class='hvr-grow'>Add to Basket</button>
+                        <br><br>
+                        <a href="#" class="button hvr-grow">Grow</a>
+                        <br><br>
+                        <!--{{ form.submit(class=".hvr-grow") }}-->
+                </div>
+
+
+        </form>
+
+        <br><br>
+
+    </div>
+
+    
+{% endblock content %}

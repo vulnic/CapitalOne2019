@@ -1,0 +1,185 @@
+<table class="table_mine">
+            <thead>
+                <tr>
+                    <th>Cat 1</th>
+                    <th>Cat 2 </th>
+                    <th>Cat 3</th>
+                    <th>Cat 4</th>
+                    <th>Cat 5</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            
+                <tr>
+                    
+                    <td>
+                        <div class="hvr-fade">
+                            <button class="hvr-fade button" id="submit_0_0" name="submit" type="submit">100</button>
+                        </div>
+                    </td>
+                    
+                    <td>
+                        <div class="hvr-fade">
+                            <button class="hvr-fade button" id="submit_0_1" name="submit" type="submit">100</button>
+                        </div>
+                    </td>
+                    
+                    <td>
+                        <div class="hvr-fade">
+                            <button class="hvr-fade button" id="submit_0_2" name="submit" type="submit">100</button>
+                        </div>
+                    </td>
+                    
+                    <td>
+                        <div class="hvr-fade">
+                            <button class="hvr-fade button" id="submit_0_3" name="submit" type="submit">100</button>
+                        </div>
+                    </td>
+                    
+                    <td>
+                        <div class="hvr-fade">
+                            <button class="hvr-fade button" id="submit_0_4" name="submit" type="submit">100</button>
+                        </div>
+                    </td>
+                    
+                </tr>
+            
+                <tr>
+                    
+                    <td>
+                        <div class="hvr-fade">
+                            <button class="hvr-fade button" id="submit" name="submit" type="submit">200</button>
+                        </div>
+                    </td>
+                    
+                    <td>
+                        <div class="hvr-fade">
+                            <button class="hvr-fade button" id="submit" name="submit" type="submit">200</button>
+                        </div>
+                    </td>
+                    
+                    <td>
+                        <div class="hvr-fade">
+                            <button class="hvr-fade button" id="submit" name="submit" type="submit">200</button>
+                        </div>
+                    </td>
+                    
+                    <td>
+                        <div class="hvr-fade">
+                            <button class="hvr-fade button" id="submit" name="submit" type="submit">200</button>
+                        </div>
+                    </td>
+                    
+                    <td>
+                        <div class="hvr-fade">
+                            <button class="hvr-fade button" id="submit" name="submit" type="submit">200</button>
+                        </div>
+                    </td>
+                    
+                </tr>
+            
+                <tr>
+                    
+                    <td>
+                        <div class="hvr-fade">
+                            <button class="hvr-fade button" id="submit" name="submit" type="submit">300</button>
+                        </div>
+                    </td>
+                    
+                    <td>
+                        <div class="hvr-fade">
+                            <button class="hvr-fade button" id="submit" name="submit" type="submit">300</button>
+                        </div>
+                    </td>
+                    
+                    <td>
+                        <div class="hvr-fade">
+                            <button class="hvr-fade button" id="submit" name="submit" type="submit">300</button>
+                        </div>
+                    </td>
+                    
+                    <td>
+                        <div class="hvr-fade">
+                            <button class="hvr-fade button" id="submit" name="submit" type="submit">300</button>
+                        </div>
+                    </td>
+                    
+                    <td>
+                        <div class="hvr-fade">
+                            <button class="hvr-fade button" id="submit" name="submit" type="submit">300</button>
+                        </div>
+                    </td>
+                    
+                </tr>
+            
+                <tr>
+                    
+                    <td>
+                        <div class="hvr-fade">
+                            <button class="hvr-fade button" id="submit" name="submit" type="submit">400</button>
+                        </div>
+                    </td>
+                    
+                    <td>
+                        <div class="hvr-fade">
+                            <button class="hvr-fade button" id="submit" name="submit" type="submit">400</button>
+                        </div>
+                    </td>
+                    
+                    <td>
+                        <div class="hvr-fade">
+                            <button class="hvr-fade button" id="submit" name="submit" type="submit">400</button>
+                        </div>
+                    </td>
+                    
+                    <td>
+                        <div class="hvr-fade">
+                            <button class="hvr-fade button" id="submit" name="submit" type="submit">400</button>
+                        </div>
+                    </td>
+                    
+                    <td>
+                        <div class="hvr-fade">
+                            <button class="hvr-fade button" id="submit" name="submit" type="submit">400</button>
+                        </div>
+                    </td>
+                    
+                </tr>
+            
+                <tr>
+                    
+                    <td>
+                        <div class="hvr-fade">
+                            <button class="hvr-fade button" id="submit" name="submit" type="submit">500</button>
+                        </div>
+                    </td>
+                    
+                    <td>
+                        <div class="hvr-fade">
+                            <button class="hvr-fade button" id="submit" name="submit" type="submit">500</button>
+                        </div>
+                    </td>
+                    
+                    <td>
+                        <div class="hvr-fade">
+                            <button class="hvr-fade button" id="submit" name="submit" type="submit">500</button>
+                        </div>
+                    </td>
+                    
+                    <td>
+                        <div class="hvr-fade">
+                            <button class="hvr-fade button" id="submit" name="submit" type="submit">500</button>
+                        </div>
+                    </td>
+                    
+                    <td>
+                        <div class="hvr-fade">
+                            <button class="hvr-fade button" id="submit" name="submit" type="submit">500</button>
+                        </div>
+                    </td>
+                    
+                </tr>
+            
+            </tbody>
+        </table>

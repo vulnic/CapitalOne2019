@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Choose a Category</h1>
+
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+
+        <div class="table-wrapper">
+            {{ table }} <!-- MAKE THIS A CLICKABLE TABLE -->
+        </div>
+    
+        <div class="table-wrapper">
+            {{ tableAll }}
+        </div>
+    </form>
+
+    
+
+    
+    
+{% endblock content %}
