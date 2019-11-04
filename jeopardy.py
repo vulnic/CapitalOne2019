@@ -1,11 +1,9 @@
 from flask import Flask, render_template, url_for, flash, redirect, request
-#from flask_api import FlaskAPI
 from forms import RegistrationForm, LoginForm, ApiForm, SearchCategoryForm, QuestionForm
 from tables import ClueTable, Clue, CategoryTable, Category, JeopardyBoard, JeopardyTile
 from test_api import display_clue, get_categories
 import json
 import requests
-import datetime
 
 app = Flask(__name__)
 #api = FlaskAPI(__name__)
@@ -35,8 +33,6 @@ def start(): #After searching, redirect to list of options
 
     if request.method == 'POST':
         cat_name = form.category.data
-        #value = form.value_dropdown.data
-        print("RAN")
         return redirect(url_for('searchCategory', board=True)) #?
     
     return render_template('start.html', form=form)
@@ -85,11 +81,8 @@ def chooseCategoryBoard():
     form = ApiForm()
     cat_list = []
 
-    keys = list(request.form.keys())
     allCatTableItems = []
     tableCat = []
-
-    #print(keys)
 
     #make a table for the category entered
     with open('categories.json', 'r') as f:
@@ -111,7 +104,7 @@ def chooseCategoryBoard():
         
         table = CategoryTable(allCatTableItems) 
         
-    return render_template('chooseCategoryBoard.html', table = table, form=form, cat_list=cat_list) 
+    return render_template('chooseCategoryBoard.html', table=table, form=form, cat_list=cat_list) 
 
 #-------------------------------------------------------
 
@@ -152,7 +145,6 @@ def jeopardy():
 
         if(len(keys) > 0):
             which_button = keys[len(keys) - 1]
-            #print("submit button name: " + request.form['submit_button'])
             row = int(which_button[7])
             col = int(which_button[9])
 

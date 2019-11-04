@@ -31,7 +31,6 @@ class QuestionForm(FlaskForm):
 
 class ApiForm(FlaskForm):
     category = StringField('Category',validators=[DataRequired()])
-    #value_dropdown = SelectField(u'Value', choices = [('100',100),('200',200),('300',300),('400',400),('500',500)])
     count = StringField('Count')
     submit = SubmitField('Submit')
 
