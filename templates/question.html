@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+<table class = 'fl-table'>
+    <thead>
+        <tr>
+            <th>Question</th>
+            <th>Answer</th>
+            <th>Value</th>
+            <th>Airdate</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for clue in clues %}
+        <tr>
+            <td>{{ clue.question }}</td>
+            <td>{{ clue.answer }}</td>
+            <td>{{ clue.value }}</td>
+            <td>{{ clue.airdate }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}

@@ -8,38 +8,30 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="static/main.css?version">
+    <link rel="stylesheet" type="text/css" href="static/main.css">
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     
-    {% if title %}
-        <title>Flask Blog - {{ title }}</title>
-    {% else %}
-        <title>Flask Blog</title>
-    {% endif %}
+    <title>Jeopardy - Capital One Winter Summit</title>
 </head>
 <body>
     <header class="site-header">
       <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
-          <a class="navbar-brand mr-4" href="/">Flask Blog</a>
+          <a class="navbar-brand mr-4" href="/">Jeopardy</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
-              <a class="nav-item nav-link" href="{{ url_for('home') }}">Home</a>
-              <a class="nav-item nav-link" href="{{ url_for('searchCategory') }}">Search</a>
               <a class="nav-item nav-link" href="{{ url_for('start') }}">Start</a>
-              <a class="nav-item nav-link" href="{{ url_for('lookup') }}">Lookup</a>
-              <a class="nav-item nav-link" href="{{ url_for('test') }}">Test</a>
-              <a class="nav-item nav-link" href="{{ url_for('jeopardy') }}">Jeopardy</a>
+              <a class="nav-item nav-link" href="{{ url_for('jeopardy') }}">Jeopardy Board</a>
             </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
-              <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
-              <a class="nav-item nav-link" href="{{ url_for('register') }}">Register</a>
+              <a>Extras: </a>
+              <a class="nav-item nav-link" href="{{ url_for('lookup') }}">Lookup</a>
             </div>
           </div>
         </div>
@@ -58,7 +50,10 @@
             {% endif %}
           {% endwith %}
           {% block content %}{% endblock %}
-      </div>
+        </div>
+        <div class="col-md-4">
+            {% block content2 %}{% endblock %}
+        </div>
       </div>
     </main>
   </body>

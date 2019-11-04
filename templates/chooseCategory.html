@@ -2,20 +2,36 @@
 {% block content %}
     <h1>Choose a Category</h1>
 
+
     <form method="POST" action="">
         {{ form.hidden_tag() }}
 
         <div class="table-wrapper">
-            {{ table }} <!-- MAKE THIS A CLICKABLE TABLE -->
+           <!--{{ tableAll }} MAKE THIS A CLICKABLE TABLE -->
+
+            <table class = 'fl-table'>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Clue Count</th>
+                    </tr>
+                </thead>
+            
+                <tbody>
+                    {% for cat in cat_list %}
+                    <tr>
+                        <td><a class = 'button hvr-grow' href="{{url_for('question')}}?cat_id={{cat['id']}}" id='cat-{{loop.index}}'>{{cat['title']}}</a></td>
+                        <td>{{cat['clues_count']}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+         
         </div>
     
-        <div class="table-wrapper">
-            {{ tableAll }}
-        </div>
+
     </form>
-
-    
-
-    
-    
 {% endblock content %}
+
+

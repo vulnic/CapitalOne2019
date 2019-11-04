@@ -22,11 +22,10 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Login')
 
 class ApiForm(FlaskForm):
-    value = StringField('Value',validators=[DataRequired()])
     category = StringField('Category',validators=[DataRequired()])
-    count = StringField('Count',validators=[DataRequired()])
-    submit = SubmitField('Submit',validators=[DataRequired()])
-    value_dropdown = SelectField(u'Value', choices = [('1001',100),('200',200),('300',300),('400',400),('500',500)], validators = [DataRequired()])
+    count = StringField('Count')
+    submit = SubmitField('Submit')
+    #value_dropdown = SelectField(u'Value', choices = [('100',100),('200',200),('300',300),('400',400),('500',500)], validators = [DataRequired()])
     
 
 

@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Press Start to Begin!</h1>
+
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        
+        <div>
+            {{ form.submit(class="hvr-grow") }}
+        </div>
+    </form>
+
+{% endblock content %}

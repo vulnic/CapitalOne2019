@@ -8,18 +8,18 @@ body {
  * --------------------------------------------------*/
 
 .modal-header, h4, .close {
-  background-color: #5cb85c;
-  color:white !important;
+  background-color: #2098D1;
+  color:white;
   text-align: center;
   font-size: 30px;
-  style="padding:35px 50px;"
+  padding:35px 50px;
 }
 
 .modal-body {
-  style="padding:40px 50px;
+  padding:40px 50px;
 }
 .modal-footer {
-  background-color: #f9f9f9;
+  background-color: #f0f0f0;
 }
 
 /* Button CSS
@@ -48,6 +48,13 @@ body {
 /* Add a background color on hover */
 .btn-group button:hover {
   background-color: #3e8e41;
+}
+
+.faded-btn {
+  height:100%;
+  width:100%;
+  background-color: grey; /* grey background */
+  color:transparent;
 }
 
 
@@ -95,6 +102,12 @@ body {
   transition-property: color, background-color;
   height:100%;
   width:100%;
+  background-color: #2098D1; /* Blueish background */
+  border: 1px solid green; /* Green border */
+  color: white; /* White text */
+  cursor: pointer; /* Pointer/hand icon */
+  /* width: 100%; this here DOESNT work for some reason
+  height: 100%; */
 }
 .hvr-fade:hover, .hvr-fade:focus, .hvr-fade:active {
   background-color: blue;
@@ -102,7 +115,7 @@ body {
 }
 
 .hvr-fade button{
-  background-color: #2098D1; /* Green background */
+  background-color: #2098D1; /* Blueish background */
   border: 1px solid green; /* Green border */
   color: white; /* White text */
   cursor: pointer; /* Pointer/hand icon */
