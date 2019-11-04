@@ -20,4 +20,22 @@
         {% endfor %}
     </tbody>
 </table>
+
+<br>
+
+{% if form.errors %}
+{{ form.errors }}
+{% endif %} 
+
+<form method = 'POST' action="">
+    {{form.hidden_tag()}}
+
+    <a>Filter:</a>
+    <br>
+    {{form.value_dropdown(class="btn btn-secondary dropdown-toggle")}}
+    <div style='float: right;'>
+        {{form.submit(class="hvr-grow")}} 
+    </div>
+</form>
+    
 {% endblock content %}

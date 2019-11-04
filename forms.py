@@ -21,15 +21,19 @@ class LoginForm(FlaskForm):
     remember = BooleanField('Remember Me')
     submit = SubmitField('Login')
 
+class SearchCategoryForm(FlaskForm):
+    category = StringField('Category',validators=[DataRequired()])
+    submit = SubmitField('Submit')
+
+class QuestionForm(FlaskForm):
+    value_dropdown = SelectField('Value', choices = [('100',100),('200',200),('300',300),('400',400),('500',500),('600',600),('700',700),('800',800),('900',900),('1000',1000)])
+    submit = SubmitField('Submit')
+
 class ApiForm(FlaskForm):
     category = StringField('Category',validators=[DataRequired()])
+    #value_dropdown = SelectField(u'Value', choices = [('100',100),('200',200),('300',300),('400',400),('500',500)])
     count = StringField('Count')
     submit = SubmitField('Submit')
-    #value_dropdown = SelectField(u'Value', choices = [('100',100),('200',200),('300',300),('400',400),('500',500)], validators = [DataRequired()])
-    
-
-
-
 
 
 

@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Choose a Category</h1>
+
+    <script>
+        function functionData(){
+            var data = this.name.split(' --- ',2);
+
+            var table = document.getElementById("selected_categories");
+            var row = table.insertRow(0);
+            var category = row.insertCell(0);
+            var clue_count = row.insertCell(1);
+
+            category.innerHTML = data[0];
+            clue_count.innerHTML = data[1];
+        }
+    </script>
+
+
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+
+        <div class="table-wrapper">
+           <!--{{ tableAll }} MAKE THIS A CLICKABLE TABLE -->
+
+            <table class = 'fl-table' id='selecting_from'>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Clue Count</th>
+                    </tr>
+                </thead>
+            
+                <tbody>
+                    {% for cat in cat_list %}
+                    <tr>
+                        <td><button class = 'hvr-grow' onclick='functionData(this)' id='cat-{{loop.index}}' name='{{cat.title}} --- {{cat.clues_count}}'>{{cat['title']}}</button></td>
+                        <td>{{cat['clues_count']}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+         
+        </div>
+
+
+    </form>
+{% endblock content %}
+
+{% block content2 %}
+
+<div class="table-wrapper" id='selected_categories'>
+    <table class = 'fl-table' id='selecting_from'>
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Clue Count</th>
+                </tr>
+            </thead>
+
+            <tbody></tbody>
+</div>
+
+
+
+
+{% endblock content2%}
+

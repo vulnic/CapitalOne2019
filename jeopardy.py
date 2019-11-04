@@ -1,6 +1,6 @@
 from flask import Flask, render_template, url_for, flash, redirect, request
 #from flask_api import FlaskAPI
-from forms import RegistrationForm, LoginForm, ApiForm
+from forms import RegistrationForm, LoginForm, ApiForm, SearchCategoryForm, QuestionForm
 from tables import ClueTable, Clue, CategoryTable, Category, JeopardyBoard, JeopardyTile
 from test_api import display_clue, get_categories
 import json
@@ -37,7 +37,7 @@ def start(): #After searching, redirect to list of options
         cat_name = form.category.data
         #value = form.value_dropdown.data
         print("RAN")
-        return redirect(url_for('searchCategory')) #?
+        return redirect(url_for('searchCategory', board=True)) #?
     
     return render_template('start.html', form=form)
 
@@ -45,14 +45,16 @@ def start(): #After searching, redirect to list of options
 
 @app.route("/searchCategory", methods=['GET', 'POST'])
 def searchCategory(): #After searching, redirect to list of options
-    form = ApiForm()
-
-    print(form.validate_on_submit(),form.validate(),request.method == 'POST')
+    form = SearchCategoryForm()
+    board = request.args.get('board') #this is a string!!
 
     if form.validate_on_submit():
         category_name = form.category.data
-        #value = form.value_dropdown.data
-        return redirect(url_for('chooseCategory', cat_name = category_name)) #pass in cat_name... somehow
+
+        if board == 'True':
+            return redirect(url_for('chooseCategoryBoard', cat_name = category_name)) 
+        elif board == 'False':
+            return redirect(url_for('chooseCategory', cat_name = category_name))
     
     return render_template('searchCategories.html', form=form)
 
@@ -64,11 +66,30 @@ def chooseCategory():
     form = ApiForm()
     cat_list = []
 
+    #make a table for the category entered
+    with open('categories.json', 'r') as f:
+        all_categories = json.load(f)
+        for item in all_categories:
+            if item['title'] and cat_name in item['title']:
+                cat_list.append(item)
+        
+    return render_template('chooseCategory.html', form=form, cat_list=cat_list) 
+
+
+#-------------------------------------------------------
+
+
+@app.route("/chooseCategoryBoard",methods=['GET', 'POST'])
+def chooseCategoryBoard():
+    cat_name = request.args.get('cat_name')
+    form = ApiForm()
+    cat_list = []
+
     keys = list(request.form.keys())
     allCatTableItems = []
     tableCat = []
 
-    print(keys)
+    #print(keys)
 
     #make a table for the category entered
     with open('categories.json', 'r') as f:
@@ -90,18 +111,30 @@ def chooseCategory():
         
         table = CategoryTable(allCatTableItems) 
         
-    return render_template('chooseCategory.html', table = table, form=form, cat_list=cat_list) 
+    return render_template('chooseCategoryBoard.html', table = table, form=form, cat_list=cat_list) 
 
 #-------------------------------------------------------
 
-@app.route("/question")
+@app.route("/question",methods=['GET', 'POST'])
 def question():
     cat_id = request.args.get('cat_id')
-    form = ApiForm()
-    
+    form = QuestionForm()
     clues = display_clue(cat_id)
+    filtered_clues = clues
 
-    return render_template('question.html',clues=clues)
+    if form.validate_on_submit():
+        value = form.value_dropdown.data
+        filtered_clues = []
+
+        for clue in clues:
+            print(type(clue['value']),type(value))
+            if clue['value'] == int(value):
+                filtered_clues.append(clue)
+
+        if len(filtered_clues) == 0:
+            flash("No clues of value: " + value,'danger')
+
+    return render_template('question.html',clues=filtered_clues, form=form)
 
 #-------------------------------------------------------
 
@@ -123,10 +156,10 @@ def jeopardy():
             row = int(which_button[7])
             col = int(which_button[9])
 
-            print(which_button, data[row][col])
+            print(which_button, jeopardy_data[row][col])
 
-            question = data[row][col]['question']
-            answer = data[row][col]['answer']
+            question = jeopardy_data[row][col]['question']
+            answer = jeopardy_data[row][col]['answer']
 
             flash("Question: " + question,"danger")
             flash("Answer: " + answer,"success")
